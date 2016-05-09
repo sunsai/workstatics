@@ -9,7 +9,7 @@ var config = {
       name: 'workstatics'
     },
     port: process.env.PORT || 3000,
-    db: 'mongodb://localhost/workstatics-development'
+    db: 'mongodb://192.168.13.1/workstatics-development'
   },
 
   test: {
@@ -18,7 +18,7 @@ var config = {
       name: 'workstatics'
     },
     port: process.env.PORT || 3000,
-    db: 'mongodb://localhost/workstatics-test'
+    db: 'mongodb://192.168.13.1/workstatics-test'
   },
 
   production: {
@@ -27,7 +27,7 @@ var config = {
       name: 'workstatics'
     },
     port: process.env.PORT || 3000,
-    db: 'mongodb://localhost/workstatics-production'
+    db: 'mongodb://192.168.13.1/workstatics-production'
   }
 };
 

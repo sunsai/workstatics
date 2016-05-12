@@ -14,8 +14,7 @@ module.exports = function (app, config) {
   app.locals.ENV_DEVELOPMENT = env == 'development';
 
   app.set('views', config.root + '/app/views');
-  app.engine('.html', require('ejs').__express);
-  app.set('view engine', 'html');
+  app.set('view engine', 'ejs');
 
   // app.use(favicon(config.root + '/public/img/favicon.ico'));
   app.use(logger('dev'));
@@ -31,6 +30,10 @@ module.exports = function (app, config) {
   var controllers = glob.sync(config.root + '/app/controllers/*.js');
   controllers.forEach(function (controller) {
     require(controller)(app);
+  });
+  var apis = glob.sync(config.root + '/app/apis/*.js');
+  apis.forEach(function (api) {
+    require(api)(app);
   });
 
   app.use(function (req, res, next) {
